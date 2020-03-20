@@ -1,6 +1,6 @@
 package com.skilldistillery.jpacrud.entities;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -51,7 +51,8 @@ class WorldBankTest {
 //		releaseYear=1993-01-01, rentalRate=0.99,
 //		replacementCost=20.99, length=86]
 		
-//		assertEquals("ACADEMY DINOSAUR",film.getTitle());
+		assertEquals("Afghanistan",worldbank.getCountry());
+		assertEquals(40.72,worldbank.getEaseOfDoingBusiness());
 //		assertEquals("A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",film.getDescription());
 //		assertEquals("1993-01-01",film.getReleaseYear());
 //		assertEquals("0.99",film.getRentalRate());
