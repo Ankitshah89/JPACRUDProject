@@ -65,7 +65,7 @@ public class WorldBank {
 	}
 
 	public WorldBank() {
-		super();
+		
 	}
 
 	public int getId() {
