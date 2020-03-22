@@ -97,7 +97,7 @@
   <div class="button1">
 
 
-		<td><strong>Add</strong></td>
+		<td><strong> Add</strong></td>
 		<form action="create.do" method="GET" name="id" value=${ country.id}>
 
 			<button  type="submit" data-toggle="modal" data-target="#edit"

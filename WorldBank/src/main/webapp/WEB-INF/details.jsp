@@ -139,7 +139,9 @@
 
 		</c:when>
 		<c:otherwise>
+		<div class="centered">
 			<h1>Sorry! Country Not Found</h1>
+			</div>
 		</c:otherwise>
 	</c:choose>
 

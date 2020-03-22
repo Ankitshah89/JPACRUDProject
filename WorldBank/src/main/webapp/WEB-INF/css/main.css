@@ -18,6 +18,29 @@ body, html {
   float: right
 }
 
+.home_button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+ float: center; */
+ 
+  
+}
+
+.wrapper11 {
+    text-align: center;
+}
+
+
 .button1{
 	float: left;
 	 padding : 20px;
@@ -101,6 +124,10 @@ body {
 	border: none;
 }
 
+.update{
+	float:center;S
+}
+
 .topnav .search-container button {
 	float: right;
 	padding: 6px 10px;
@@ -114,6 +141,14 @@ body {
 
 .topnav .search-container button:hover {
 	background: #ccc;
+}
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px) {
