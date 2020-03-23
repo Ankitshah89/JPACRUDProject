@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<style><%@include file="/WEB-INF/css/main.css"%></style>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -19,23 +19,18 @@
 <title>Add successful!</title>
 </head>
 <body>
-	<div class="d-flex" id="wrapper">
-		
-
-		<div id="page-content-wrapper">
-
-			<div class="container-fluid">
-
-
+	
+	<div class= "centered">
 				<h4>
-					<p>ID # ${country.id } ${country.country} successfully added!</p>
+					<p>ID # ${country.id } ${ country.country} successfully added!</p>
 				</h4>
-				
-				<form action ="home.do"> <input class="btn btn-primary" type="submit" value="Home"></form>	
-
-
-			</div>
+		<div class="wrapper11">
+			<form action="home.do">
+				<input class="btn btn-primary" type="submit" value="Home">
+			</form>
 		</div>
+
+
 
 	</div>
 	<!-- Optional JavaScript -->

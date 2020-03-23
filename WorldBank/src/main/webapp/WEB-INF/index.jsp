@@ -14,7 +14,7 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="/main.css">
 <link type="text/css" rel="stylesheet" href="css/animate.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -52,20 +52,27 @@
 <style><%@include file="/WEB-INF/css/main.css"%></style>
 <style><%@include file="/WEB-INF/css/style.css"%></style>
 
+
 <meta charset="UTF-8">
 </head>
-<!-- Start Paste -->
+
 <div class="topnav navbar-fixed-top" >
   <a href="home.do"><i class="fa fa-fw fa-home"></i> Home</a>
- <!--  <a href="#about">About</a>
-  <a href="#contact">Contact</a> -->
+
   <div class="search-container">
     <form class="searchButton" action="details.do" method="GET">
-				<input type="number" name="id" placeholder="Search by Id" />
-				<button type="submit" class="btn btn-primary " value="Search by Id">
-				Search</button>
+				<input type="number" name="id" placeholder="Search by Id"   />
+				 <button type="submit" class="btn btn" value="Search by Id">
+				Search</button> 
 			</form>
   </div>
+    <div class="search-container">
+  <form class="searchButton" action="searchByName.do" method="GET">
+				<input type="text" name="name" placeholder="Search by Name" />
+				 <button type="submit" class="btn btn " value="Search by Name">
+				Search</button> 
+			</form>
+			</div>
 </div>
 <body> 
   <!-- ========== HEADER SECTION ========== -->
@@ -79,19 +86,19 @@
       <div class="row">
         <h1>Welcome to the World Database</h1>
 					<br>
-					<h3>Something for your curiosity !</h3>
+					<h3>Something for your curiosity !!</h3>
 					<br> <br>   
 					     <div class="col-lg-6 col-lg-offset-3">
         </div>
       </div>
     </div>
-    <!-- /container -->
+  
   </div>
   
   
  
-  <!-- /headerwrap -->
-  <!-- ========== TABLE SECTION ========== -->
+  
+ 
   <br>
   <br>
   <div class="button1">
@@ -182,27 +189,13 @@
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>        
-        <tr id="d2">
-    <!--  
-          <td><input type="hidden" id="f2"></td>
-          <td><input type="hidden" id="f2"></td>
-          <td><input type="hidden" id="f2"></td>
-          <td><input type="hidden" id="l2"></td>
-          <td><input type="hidden" id="m1"></td>
-          <td><input type="hidden" id="m2"></td>
-          <td>
-           -->
-         
-         
-		
-          
-        </tr>
+     
       </tbody>
     </table>
   </div>
  
   
-  <!-- ========== FOOTER ========== -->
+ 
   
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>

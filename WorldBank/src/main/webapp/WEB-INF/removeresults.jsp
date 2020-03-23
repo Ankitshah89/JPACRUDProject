@@ -25,7 +25,7 @@
 				
 				<div class="centered">
 				<h4>
-					<p>ID # ${country.id } Successfully Removed!
+					<p> ${country.country } Successfully Removed!
 					
 					</p>
 				</h4>

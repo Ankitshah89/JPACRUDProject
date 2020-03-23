@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<style><%@include file="/WEB-INF/css/main.css"%></style>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -19,12 +19,7 @@
 <title>Add Country</title>
 </head>
 <body>
-	<div class="d-flex" id="wrapper">
-		
-
-		<div id="page-content-wrapper">
-
-			<div class="container-fluid">
+	<div class= "centered">
 
 				<form:form action="create.do" method="POST" modelAttribute="country">
 				
@@ -40,46 +35,52 @@
 					<form:input path="longitude" value="${country.longitude }" required="required"/>
 					<form:errors path="longitude" />
 					<br />
-				<form:label path="accessToElectricity">Access To Electricity: </form:label>
-					<form:input path="accessToElectricity" value="${country.accessToElectricity }" required="required"/>
+					
+				<form:label path="accessToElectricity">Access To Electricity (%): </form:label>
+					<form:input path="accessToElectricity"/>
 					<form:errors path="accessToElectricity" />
+
+					
 					<br />
-					<form:label path="easeOfDoingBusiness">Ease of Doing Business: </form:label>
-					<form:input path="easeOfDoingBusiness" value="${country.easeOfDoingBusiness}" required="required"/>
+					<form:label path="easeOfDoingBusiness">Ease of Doing Business (0-100): </form:label>
+					<form:input path="easeOfDoingBusiness" value="${country.easeOfDoingBusiness}"  />
 					<br />
-					<form:label path="educationalAttaintment">Educational Attaintment: </form:label>
-					<form:input path="educationalAttaintment" value="${country.educationalAttaintment}" required="required"/>
+					<form:label path="educationalAttaintment">Educational Attainment (%): </form:label>
+					<form:input path="educationalAttaintment" value="${country.educationalAttaintment}" />
 					<br />
 					
-					<form:label path="exportsVsImports">Exports VS Imports: </form:label>
-					<form:input path="exportsVsImports" value="${country.exportsVsImports}" required="required"/>
+					<form:label path="exportsVsImports">Exports VS Imports (%): </form:label>
+					<form:input path="exportsVsImports" value="${country.exportsVsImports}" />
 					<br />
 				
-					<form:label path="fertilityRate">Fertility Rate: </form:label>
-					<form:input path="fertilityRate" value="${country.fertilityRate}" required="required"/>
+					<form:label path="fertilityRate">Fertility Rate (per 1000 women) : </form:label>
+					<form:input path="fertilityRate" value="${country.fertilityRate}" />
 					<br />
 					
-					<form:label path="fossilFuelConsumption">Fossil Fuel Consumption: </form:label>
-					<form:input path="fossilFuelConsumption" value="${country.fossilFuelConsumption}" required="required"/>
+					<form:label path="fossilFuelConsumption">Fossil Fuel Consumption (%): </form:label>
+					<form:input path="fossilFuelConsumption" value="${country.fossilFuelConsumption}"/>
 					<br />
 					
-					<form:label path="gdpGrowth">GDP Growth: </form:label>
-					<form:input path="gdpGrowth" value="${country.gdpGrowth}" required="required"/>
+					<form:label path="gdpGrowth">GDP Growth (%): </form:label>
+					<form:input path="gdpGrowth" value="${country.gdpGrowth}" />
 					<br />
 					
-					<form:label path="gdpPerCapita">GDP Per Capita: </form:label>
-					<form:input path="gdpPerCapita" value="${country.gdpPerCapita}" required="required"/>
+					<form:label path="gdpPerCapita">GDP Per Capita ($/PPP): </form:label>
+					<form:input path="gdpPerCapita" value="${country.gdpPerCapita}" />
 					<br />
 					
+										<div class="wrapper11">
 					<input class="btn btn-primary" type="submit" value="Create">
+				</div>
 				</form:form>
 				<br>
-					<form action ="home.do"> <input class="btn btn-primary" type="submit" value="Home"></form>					
-
+				<div class="wrapper11">
+					<form action ="home.do"> <input class="btn btn-primary" type="submit" value="Home"></form>	
+					</div>				
 			</div>
-		</div>
 
-	</div>
+
+	
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

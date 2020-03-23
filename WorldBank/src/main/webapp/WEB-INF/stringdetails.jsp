@@ -75,80 +75,82 @@
 </head>
 <body>
 
-	<c:choose>
-		<c:when test="${! empty country}">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">Id</th>
-						<th scope="col">Country</th>
-						<th scope="col">Access To Electricity(%)</th>
-						<th scope="col">Ease Of Doing Business(0-100)</th>
-						<th scope="col">Educational Attainment(% Undergrad or More)</th>
-						<th scope="col">Exports Vs Imports(%)</th>
-						<th scope="col">Fertility Rate (total births per 1000 women)</th>
-						<th scope="col">Fossil Fuel Consumption (%)</th>
-						<th scope="col">GDP Growth(%)</th>
-						<th scope="col">GDP Per Capita($/PPP)</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">${country.id}</th>
-						<td>${country.country}</td>
-						<td>${country.accessToElectricity}</td>
-						<td>${country.easeOfDoingBusiness}</td>
-						<td>${country.educationalAttaintment}</td>
-						<td>${country.exportsVsImports}</td>
-						<td>${country.fertilityRate}</td>
-						<td>${country.fossilFuelConsumption}</td>
-						<td>${country.gdpGrowth}</td>
-						<td>${country.gdpPerCapita}</td>
-					</tr>
+	<c:forEach var="country" items="${countries}">
+		<c:choose>
+			<c:when test="${! empty country}">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Country</th>
+							<th scope="col">Access To Electricity(%)</th>
+							<th scope="col">Ease Of Doing Business(0-100)</th>
+							<th scope="col">Educational Attainment(% Undergrad or More)</th>
+							<th scope="col">Exports Vs Imports(%)</th>
+							<th scope="col">Fertility Rate (total births per women)</th>
+							<th scope="col">GDP Growth(%)</th>
+							<th scope="col">GDP Per Capita($ PPP)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">${country.id}</th>
+							<td>${country.country}</td>
+							<td>${country.accessToElectricity}</td>
+							<td>${country.easeOfDoingBusiness}</td>
+							<td>${country.educationalAttaintment}</td>
+							<td>${country.exportsVsImports}</td>
+							<td>${country.fertilityRate}</td>
+							<td>${country.gdpGrowth}</td>
+							<td>${country.gdpPerCapita}</td>
+						</tr>
 
-				</tbody>
-			</table>
-
+					</tbody>
+				</table>
 
 
-			<td>
-				<form action="remove.do" method="GET" name="id" value=${ country.id}>
 
-					<button class="button" data-target="#delete" type="submit"
-						data-toggle="modal" data-uid="1"
-						class="delete btn btn-danger btn-sm" name="id"
+				<td>
+					<form action="remove.do" method="GET" name="id"
 						value=${ country.id}>
-						<span class="glyphicon glyphicon-trash"></span>
-					</button>
-				</form>
 
-			</td>
+						<button class="button" data-target="#delete" type="submit"
+							data-toggle="modal" data-uid="1"
+							class="delete btn btn-danger btn-sm" name="id"
+							value=${ country.id}>
+							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+					</form>
+
+				</td>
 
 
-			<td>
-				<form action="update.do" method="GET">
-					<input type="hidden" name="id" value=${ country.id} />
+				<td>
+					<form action="update.do" method="GET">
+						<input type="hidden" name="id" value=${ country.id} />
 
-					<button class="button" type="submit" data-toggle="modal"
-						value=${ country.id} name="country" data-target="#edit2"
-						data-uid="2" class="update btn btn-warning btn-sm">
-						<span class="glyphicon glyphicon-pencil"></span>
-					</button>
-				</form>
-			</td>
+						<button class="button" type="submit" data-toggle="modal"
+							value=${ country.id} name="country" data-target="#edit2"
+							data-uid="2" class="update btn btn-warning btn-sm">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</form>
+				</td>
 
-<%-- <form action="country.do">
-	      <input name="prev" type="submit" value="Previous" />
-	      <input name="next" type="submit" value="Next" />
-      </form>
- --%>
-		</c:when>
-		<c:otherwise>
-			<div class="centered">
-				<h1>Sorry! Country Not Found</h1>
-			</div>
-		</c:otherwise>
-	</c:choose>
+
+
+			</c:when>
+			<c:otherwise>
+				<div class="centered">
+					<h1>Sorry! Country Not Found</h1>
+				</div>
+
+			</c:otherwise>
+		</c:choose>
+
+	</c:forEach>
+
+
 
 </body>
 </html>

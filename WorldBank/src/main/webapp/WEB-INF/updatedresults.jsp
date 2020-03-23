@@ -27,7 +27,7 @@
 
 
 				<h4>
-					<p>ID #: ${country.id} ${country.country } Successfully Updated!</p>
+					<p>ID # ${country.id} ${country.country } Successfully Updated!</p>
 				</h4>
 	<div class="wrapper11">
 			<form action ="home.do"> <input class="home_button" type="submit" value="Home"></form>	

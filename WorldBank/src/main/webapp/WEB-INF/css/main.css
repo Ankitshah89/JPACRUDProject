@@ -1,80 +1,86 @@
 body, html {
 	height: 90%;
-	
 }
+
 .button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-  width: 80px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  float: right
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	padding: 10px;
+	width: 80px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+	float: right
 }
 
 .home_button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-  width: 80px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
- float: center; */
- 
-  
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	padding: 10px;
+	width: 80px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+	float: center;
+	*/
 }
 
 .wrapper11 {
-    text-align: center;
+	text-align: center;
 }
 
-
-.button1{
+.button1 {
 	float: left;
-	 padding : 20px;
-	
+	padding: 20px;
 }
 
 .button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
 }
 
 .button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
 }
 
 .button:hover span {
-  padding-right: 25px;
+	padding-right: 25px;
 }
 
 .button:hover span:after {
-  opacity: 1;
-  right: 0;
+	opacity: 1;
+	right: 0;
 }
 
-position: absolute;
-}
+position
 
+
+:
+
+ 
+
+absolute
+
+
+;
+}
 .navbar {
 	margin-bottom: 0;
 }
@@ -113,6 +119,22 @@ body {
 	color: white;
 }
 
+
+.form-textbox {
+
+height: 25px !important;
+
+width: 220px !important;
+
+font-size: 14px !important;
+
+}
+mytext {
+  border: 1px solid #000;
+                padding: 0;
+                margin: 0;
+}
+
 .topnav .search-container {
 	float: right;
 }
@@ -124,8 +146,15 @@ body {
 	border: none;
 }
 
-.update{
-	float:center;S
+.topnav input[type=text] {
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+}
+.update {
+	float: center;
+	S
 }
 
 .topnav .search-container button {
@@ -144,11 +173,11 @@ body {
 }
 
 .centered {
-  position: fixed; /* or absolute */
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+	position: fixed; /* or absolute */
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px) {
@@ -166,9 +195,5 @@ body {
 	.topnav input[type=text] {
 		border: 1px solid #ccc;
 	}
-	footer {
-		
-	}
-
-}	
+}
 }

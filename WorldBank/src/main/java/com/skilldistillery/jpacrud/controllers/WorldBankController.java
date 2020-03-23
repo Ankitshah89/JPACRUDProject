@@ -1,18 +1,18 @@
 package com.skilldistillery.jpacrud.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.apache.logging.log4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpacrud.data.WorldBankDAO;
@@ -50,7 +50,7 @@ public class WorldBankController {
 
 	}
 
-	@RequestMapping(path="remove.do", method=RequestMethod.GET)
+	@RequestMapping(path = "remove.do", method = RequestMethod.GET)
 	public String deleteCountry(@ModelAttribute("id") int id, Errors errors, Model model) {
 		if (id <= 0) {
 			return "index";
@@ -58,12 +58,14 @@ public class WorldBankController {
 		WorldBank record = dao.findById(id);
 		if (dao.deleteCountry(id) != null) {
 			model.addAttribute("country", record);
+
 			return "removeresults";
 		} else {
 			return "index";
 		}
-		
+
 	}
+
 	@RequestMapping(path = "details.do", method = RequestMethod.GET)
 	public String showDetails(@ModelAttribute("id") int id, Errors errors, Model model) {
 
@@ -92,34 +94,41 @@ public class WorldBankController {
 		return "updatedresults";
 	}
 
-	@RequestMapping(path = "country.do", params = "next")
-	public ModelAndView getNextCountry(HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		WorldBank current = getCurrentStateFromSession(session);
-//    mv.addObject("state", s);
+	@RequestMapping(path = "searchByName.do")
+	public String searchByName(@RequestParam("name") String name, Model model) {
+		model.addAttribute("countries", dao.findByName(name));
 
-		WorldBank wb = dao.getNextCountryName(current);
-		session.setAttribute("country", wb);
-		mv.setViewName("index");
-		return mv;
+		return "stringdetails";
 	}
 
-	@RequestMapping(path = "country.do", params = "prev")
-	public ModelAndView getPreviousState(HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		WorldBank current = getCurrentStateFromSession(session);
-//    mv.addObject("state", s);
-
-		WorldBank wb = dao.getPreviousCountryName(current);
-		session.setAttribute("country", wb);
-		mv.setViewName("index");
-		return mv;
-	}
-
-	private WorldBank getCurrentStateFromSession(HttpSession session) {
-		WorldBank current = (WorldBank) session.getAttribute("country");
-
-		return current;
-	}
+//	@RequestMapping(path = "country.do", params = "next")
+//	public ModelAndView getNextCountry(HttpSession session) {
+//		ModelAndView mv = new ModelAndView();
+//		WorldBank current = getCurrentStateFromSession(session);
+////    mv.addObject("state", s);
+//
+//		WorldBank wb = dao.getNextCountryName(current);
+//		session.setAttribute("country", wb);
+//		mv.setViewName("details");
+//		return mv;
+//	}
+//
+//	@RequestMapping(path = "country.do", params = "prev")
+//	public ModelAndView getPreviousState(HttpSession session) {
+//		ModelAndView mv = new ModelAndView();
+//		WorldBank current = getCurrentStateFromSession(session);
+////    mv.addObject("state", s);
+//
+//		WorldBank wb = dao.getPreviousCountryName(current);
+//		session.setAttribute("country", wb);
+//		mv.setViewName("stringdetails");
+//		return mv;
+//	}
+//
+//	private WorldBank getCurrentStateFromSession(HttpSession session) {
+//		WorldBank current = (WorldBank) session.getAttribute("country");
+//
+//		return current;
+//	}
 
 }
